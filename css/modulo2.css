@@ -1,0 +1,728 @@
+/* Estilos específicos para o módulo 2 */
+/* Não incluir reset CSS aqui pois já está no index1.css */
+
+/* Garantir que o conteúdo principal seja visível no módulo */
+#telaHome {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Navegação - garantir que esteja visível */
+/* Navegação mais compacta */
+nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 30px; /* Reduzido de 20px 40px */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  z-index: 10;
+}
+
+/* Conteúdo do cabeçalho mais compacto */
+.conteudo {
+  text-align: center;
+  padding: 20px 20px; /* Reduzido de 40px 20px */
+}
+
+.conteudo h1 {
+  font-size: 2.2rem; /* Reduzido de 3rem */
+  margin-bottom: 10px; /* Reduzido de 20px */
+  color: #FFD43B; /* Cor amarela do Python */
+}
+
+.conteudo p {
+  font-size: 1.1rem; /* Reduzido de 1.2rem */
+  margin-bottom: 15px; /* Reduzido de 30px */
+  color: #FFD43B;
+}
+
+/* Console ajustado para header menor */
+.python-console.centered {
+  position: fixed;
+  top: 15px; /* Reduzido de 20px */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 800px;
+  z-index: 1000;
+  margin-top: 0;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+nav p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #FFD43B;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: #FFD43B;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Botão de logout */
+#botaoLogout {
+  background-color: #FFD43B;
+  color: #306998;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#botaoLogout:hover {
+  background-color: #f0c530;
+}
+
+/* Conteúdo do cabeçalho */
+.conteudo {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.conteudo h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #FFD43B;
+}
+
+.conteudo p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #FFD43B;
+}
+
+/* Conteúdo específico do módulo */
+.modulo-conteudo {
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.modulo-conteudo h2 {
+  color: #306998;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.modulo-conteudo h3 {
+  color: #306998;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #FFD43B;
+  padding-bottom: 0.5rem;
+  font-size: 1.4rem;
+}
+
+.modulo-conteudo p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* Estilos para imagens */
+.imagem-topico {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 8px;
+  margin: 20px auto;
+  display: block;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.topico-imagem {
+  text-align: center;
+  margin: 30px 0;
+}
+
+/* Links */
+.modulo-conteudo a {
+  color: #306998;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.modulo-conteudo a:hover {
+  text-decoration: underline;
+}
+
+/* Console Python Interativo */
+.console-section {
+  background: linear-gradient(135deg, #1e1e1e, #2d2d2d);
+  padding: 30px;
+  border-radius: 12px;
+  margin: 30px 0;
+  color: white;
+}
+
+.python-console {
+  background: #1e1e1e;
+  border-radius: 8px;
+  border: 2px solid #306998;
+  overflow: hidden;
+  font-family: 'Courier New', monospace;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+/* Classe para quando o console está centralizado no topo */
+.python-console.centered {
+  position: fixed;
+  top: 15px; /* Reduzido de 20px */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 800px;
+  z-index: 1000;
+  margin-top: 0;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+/* Ajustes responsivos para o console centralizado */
+/* Responsivo para dispositivos móveis */
+@media (max-width: 768px) {
+  nav {
+    padding: 10px 20px;
+  }
+  
+  .conteudo {
+    padding: 15px 15px;
+  }
+  
+  .conteudo h1 {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+  }
+  
+  .conteudo p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  .python-console.centered {
+    width: 95%;
+    top: 10px;
+  }
+}
+
+.console-header {
+  background: #306998;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.console-title {
+  color: white;
+  font-weight: bold;
+}
+
+.btn-limpar {
+  background: #FFD43B;
+  color: #306998;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.btn-limpar:hover {
+  background: #f0c530;
+}
+
+.console-output {
+  background: #1e1e1e;
+  color: #00ff00;
+  padding: 15px;
+  min-height: 200px;
+  max-height: 400px;
+  overflow-y: auto;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.console-line {
+  margin-bottom: 5px;
+}
+
+.console-error {
+  color: #ff6b6b;
+}
+
+.console-result {
+  color: #4ecdc4;
+}
+
+.console-input-container {
+  background: #2d2d2d;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+}
+
+.console-prompt {
+  color: #FFD43B;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.console-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: white;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  outline: none;
+}
+
+.console-input::placeholder {
+  color: #888;
+}
+
+/* Cards de Conceitos */
+.conceito-card {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: 12px;
+  padding: 25px;
+  margin: 25px 0;
+  border-left: 5px solid #306998;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.conceito-card h4 {
+  color: #306998;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+/* Código de exemplo */
+.codigo-exemplo {
+  background: #1e1e1e;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 15px 0;
+  overflow-x: auto;
+}
+
+.codigo-exemplo pre {
+  margin: 0;
+  color: #f8f8f2;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.codigo-exemplo code {
+  color: #f8f8f2;
+}
+
+/* Botão executar */
+.btn-executar {
+  background: linear-gradient(135deg, #306998, #4B8BBE);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+.btn-executar:hover {
+  background: linear-gradient(135deg, #4B8BBE, #306998);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Dica importante */
+.dica-importante {
+  background: linear-gradient(135deg, #FFD43B, #f0c530);
+  color: #306998;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.dica-importante h4 {
+  color: #306998;
+  margin-bottom: 10px;
+}
+
+.dica-importante ul {
+  margin-left: 20px;
+}
+
+.dica-importante li {
+  margin-bottom: 5px;
+}
+
+/* Grid de tipos de dados */
+.tipos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.tipo-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-top: 4px solid #306998;
+  transition: transform 0.3s ease;
+}
+
+.tipo-card:hover {
+  transform: translateY(-5px);
+}
+
+.tipo-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.tipo-header i {
+  color: #306998;
+  font-size: 1.5rem;
+}
+
+.tipo-header h4 {
+  color: #306998;
+  margin: 0;
+}
+
+/* Seção de operadores */
+.operadores-section {
+  margin: 30px 0;
+}
+
+.operador-categoria {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 25px;
+  margin: 25px 0;
+  border-left: 5px solid #FFD43B;
+}
+
+.operador-categoria h4 {
+  color: #306998;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+}
+
+.operadores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.operador-item {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.operador-item:hover {
+  transform: scale(1.05);
+}
+
+.operador {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #306998;
+  margin-bottom: 8px;
+  font-family: 'Courier New', monospace;
+}
+
+.descricao {
+  display: block;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.exemplo {
+  display: block;
+  font-size: 0.9rem;
+  color: #666;
+  font-family: 'Courier New', monospace;
+}
+
+/* Seção de exercícios */
+.exercicios-section {
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  padding: 30px;
+  border-radius: 12px;
+  margin: 40px 0;
+}
+
+.exercicios-section h3 {
+  color: #306998;
+  text-align: center;
+  margin-bottom: 20px;
+  border: none;
+}
+
+.exercicio {
+  background: white;
+  border-radius: 12px;
+  margin: 25px 0;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.exercicio-header {
+  background: linear-gradient(135deg, #306998, #4B8BBE);
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.exercicio-header h4 {
+  margin: 0;
+  color: white;
+}
+
+.dificuldade {
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.dificuldade.facil {
+  background: #4caf50;
+  color: white;
+}
+
+.dificuldade.medio {
+  background: #ff9800;
+  color: white;
+}
+
+.dificuldade.dificil {
+  background: #f44336;
+  color: white;
+}
+
+.exercicio-conteudo {
+  padding: 20px;
+}
+
+.exercicio-requisitos,
+.exercicio-dica {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 15px 0;
+}
+
+.exercicio-requisitos h5,
+.exercicio-dica h5 {
+  color: #306998;
+  margin-bottom: 10px;
+}
+
+.exercicio-requisitos ul {
+  margin-left: 20px;
+}
+
+.exercicio-requisitos li {
+  margin-bottom: 5px;
+}
+
+.exercicio-dica {
+  border-left: 4px solid #FFD43B;
+}
+
+.btn-solucao {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.btn-solucao:hover {
+  background: #218838;
+}
+
+.solucao {
+  background: #e8f5e8;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 15px;
+  border-left: 4px solid #28a745;
+}
+
+.solucao h5 {
+  color: #28a745;
+  margin-bottom: 15px;
+}
+
+/* Conclusão */
+.conclusao {
+  text-align: center;
+  background: linear-gradient(135deg, #4B8BBE, #306998);
+  color: white;
+  padding: 40px;
+  border-radius: 12px;
+  margin-top: 40px;
+}
+
+.conclusao h3 {
+  color: #FFD43B;
+  border: none;
+  margin-bottom: 20px;
+}
+
+.conclusao p {
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+/* Resumo final */
+.resumo-topicos {
+  background: rgba(255,255,255,0.1);
+  padding: 25px;
+  border-radius: 8px;
+  margin: 30px 0;
+  text-align: left;
+}
+
+.resumo-topicos h4 {
+  color: #FFD43B;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.topicos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.topico-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+}
+
+.topico-item i {
+  color: #4caf50;
+  font-size: 1.2rem;
+}
+
+.proximos-passos {
+  background: rgba(255,255,255,0.1);
+  padding: 25px;
+  border-radius: 8px;
+  margin-top: 30px;
+  text-align: left;
+}
+
+.proximos-passos h4 {
+  color: #FFD43B;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.proximos-passos ol {
+  margin-left: 20px;
+}
+
+.proximos-passos li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+  color: white;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .modulo-conteudo {
+    padding: 20px;
+    margin: 20px;
+  }
+  
+  .tipos-grid,
+  .operadores-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .console-input-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .console-prompt {
+    margin-bottom: 5px;
+  }
+  
+  .console-input {
+    width: 100%;
+  }
+  
+  .exercicio-header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  
+  .topicos-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .conteudo h1 {
+    font-size: 2rem;
+  }
+  
+  nav {
+    padding: 15px 20px;
+  }
+  
+  nav p {
+    font-size: 1.2rem;
+  }
+}

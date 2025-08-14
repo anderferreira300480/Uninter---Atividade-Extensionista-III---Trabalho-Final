@@ -1,0 +1,467 @@
+/* Estilos específicos para o módulo 1 */
+/* Não incluir reset CSS aqui pois já está no index1.css */
+
+/* Garantir que o conteúdo principal seja visível no módulo */
+#telaHome {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Navegação - garantir que esteja visível */
+nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  z-index: 10;
+}
+
+nav p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #FFD43B;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: #FFD43B;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Botão de logout */
+#botaoLogout {
+  background-color: #FFD43B;
+  color: #306998;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#botaoLogout:hover {
+  background-color: #f0c530;
+}
+
+/* Conteúdo do cabeçalho */
+.conteudo {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.conteudo h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #FFD43B; /* Cor amarela do Python */
+}
+
+.conteudo p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #FFD43B;
+}
+
+/* Conteúdo específico do módulo */
+.modulo-conteudo {
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.modulo-conteudo h2 {
+  color: #306998;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.modulo-conteudo h3 {
+  color: #306998;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #FFD43B;
+  padding-bottom: 0.5rem;
+  font-size: 1.4rem;
+}
+
+.modulo-conteudo p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* Estilos para imagens */
+.imagem-topico {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 8px;
+  margin: 20px auto;
+  display: block;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.topico-imagem {
+  text-align: center;
+  margin: 30px 0;
+}
+
+/* Grid de editores - agora com 3 colunas */
+.editores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 25px;
+  margin: 30px 0;
+}
+
+.editor-card {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.editor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.editor-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.editor-info h4 {
+  color: #306998;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.editor-info ul {
+  margin-left: 20px;
+}
+
+.editor-info li {
+  margin-bottom: 5px;
+  color: #555;
+}
+
+/* Seção Python */
+.python-section {
+  background: linear-gradient(135deg, #306998, #FFD43B);
+  padding: 30px;
+  border-radius: 12px;
+  margin: 30px 0;
+  color: white;
+}
+
+.python-info {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.python-logo {
+  width: 120px;
+  height: auto;
+  background: white;
+  padding: 15px;
+  border-radius: 50%;
+}
+
+.python-text {
+  flex: 1;
+}
+
+.python-text p {
+  color: white;
+  font-size: 1.1rem;
+}
+
+/* Tutorial steps */
+.tutorial-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  background: rgba(255,255,255,0.1);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.step-number {
+  background: #FFD43B;
+  color: #306998;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.step-content h4 {
+  color: #FFD43B;
+  margin-bottom: 10px;
+}
+
+.step-content p {
+  color: white;
+}
+
+.tutorial-img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+/* Seção Pip */
+.pip-section {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 12px;
+  margin: 30px 0;
+  border-left: 5px solid #306998;
+}
+
+.pip-info {
+  margin-top: 20px;
+}
+
+.pip-info h4 {
+  color: #306998;
+  margin-bottom: 15px;
+}
+
+.pip-info ul {
+  margin-left: 20px;
+}
+
+.pip-info li {
+  margin-bottom: 8px;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Seção Google Colab */
+.colab-section {
+  background: linear-gradient(135deg, #4285f4, #34a853);
+  padding: 30px;
+  border-radius: 12px;
+  margin: 30px 0;
+  color: white;
+}
+
+.colab-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.colab-img {
+  width: 300px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.colab-text {
+  flex: 1;
+}
+
+.colab-text h4 {
+  color: #FFD43B;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.colab-text ul {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.colab-text li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.colab-text p {
+  color: white;
+  font-size: 1.1rem;
+}
+
+/* Conclusão */
+.conclusao {
+  text-align: center;
+  background: linear-gradient(135deg, #4B8BBE, #306998);
+  color: white;
+  padding: 40px;
+  border-radius: 12px;
+  margin-top: 40px;
+}
+
+.conclusao h3 {
+  color: #FFD43B;
+  border: none;
+  margin-bottom: 20px;
+}
+
+.conclusao p {
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.proximos-passos {
+  background: rgba(255,255,255,0.1);
+  padding: 25px;
+  border-radius: 8px;
+  margin-top: 30px;
+  text-align: left;
+}
+
+.proximos-passos h4 {
+  color: #FFD43B;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.proximos-passos ol {
+  margin-left: 20px;
+}
+
+.proximos-passos li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+  color: white;
+}
+
+/* Links */
+.modulo-conteudo a {
+  color: #306998;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.modulo-conteudo a:hover {
+  text-decoration: underline;
+}
+
+.python-section a,
+.colab-section a {
+  color: #FFD43B;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .modulo-conteudo {
+    padding: 20px;
+    margin: 20px;
+  }
+  
+  .editores-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .python-info,
+  .colab-info {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .python-logo {
+    width: 80px;
+  }
+  
+  .colab-img {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .step {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .conteudo h1 {
+    font-size: 2rem;
+  }
+  
+  /* Navegação mais compacta */
+  nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 30px; /* Reduzido de 20px 40px */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    z-index: 10;
+    }
+  
+  /* Conteúdo do cabeçalho mais compacto */
+  .conteudo {
+    text-align: center;
+    padding: 20px 20px; /* Reduzido de 40px 20px */
+    }
+  
+  .conteudo h1 {
+    font-size: 2.2rem; /* Reduzido de 3rem */
+    margin-bottom: 10px; /* Reduzido de 20px */
+    color: #FFD43B;
+    }
+  
+  .conteudo p {
+    font-size: 1.1rem; /* Reduzido de 1.2rem */
+    margin-bottom: 15px; /* Reduzido de 30px */
+    color: #FFD43B;
+    }
+  
+  /* Conteúdo específico do módulo mais próximo */
+  .modulo-conteudo {
+    width: 100%;
+    max-width: 1200px;
+    margin: 30px auto; /* Reduzido de 40px */
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+}

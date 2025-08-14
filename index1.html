@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PyCode Arena</title>
+  <link rel="stylesheet" href="css/index1.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="js/index1.js" defer></script>
+  <script>
+    // Verificar se o usuário já está logado ao carregar a página
+    window.addEventListener('DOMContentLoaded', function() {
+      const usuarioLogado = localStorage.getItem('usuarioLogado');
+      const telaLogin = document.getElementById("telaLogin");
+      const telaHome = document.getElementById("telaHome");
+      
+      if (usuarioLogado) {
+        // Se já estiver logado, mostrar a tela principal
+        telaLogin.style.display = "none";
+        telaHome.style.visibility = "visible";
+        telaHome.style.opacity = "1";
+        
+        // Saudação para usuário já logado
+        const saudacao = document.getElementById("saudacaoUsuario");
+        saudacao.innerHTML = `E aí, <strong>admin</strong>! Pronto para entrar na arena? 🏟️`;
+      } else {
+        // Garantir que a tela de login esteja visível
+        telaLogin.style.display = "flex";
+        telaHome.style.visibility = "hidden";
+        telaHome.style.opacity = "0";
+      }
+    });
+</script>
+</head>
+<body>
+  
+  <!-- Tela de login -->
+  <div class="tela-login" id="telaLogin">
+    <div class="login-container">
+      <h2 class="saudacao">👋 Bem-vindo ao PyCode Arena!</h2>
+      <form onsubmit="entrar(event)">
+        <div class="campo">
+          <i class="fas fa-user"></i>
+          <input type="text" id="usuarioInput" placeholder="Usuário" required />
+        </div>
+        <div class="campo">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="senhaInput" placeholder="Senha" required />
+        </div>
+        <button type="submit">Entrar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Conteúdo principal -->
+  <div id="telaHome">
+    <header class="cabecalho">
+      <div class="cabecalho-overlay"></div>
+      <title>PyCode Arena - Sua arena de programação</title>
+      <!-- No cabeçalho -->
+      <nav>
+          <!-- Tags p removidas aqui -->
+          <ul>
+            <li><a href="#">Home</a></li>
+            <!-- <li><a href="#">Sobre o Projeto</a></li> -->
+          </ul>
+          <button id="botaoLogout" onclick="logout()">Sair</button>
+      </nav>
+      
+      <!-- Na seção de conteúdo -->
+      <div class="conteudo">
+          <h1>PyCode Arena</h1>
+          <p id="saudacaoUsuario">Entre na arena e domine o código!</p> <!-- MANTIDA -->
+          <a href="#modal" class="botao-destaque" onclick="abrirModal()">Iniciar agora</a>
+      </div>
+    </header>
+
+    <section class="banner">
+      <div class="banner-content">
+        <h1>🐍 Python: Simples, Poderoso e Expressivo</h1>
+        <p class="quote">
+          “Eu queria uma linguagem que fosse poderosa e expressiva, mas também fácil de ler e entender.”<br>
+          <span class="author">– Guido van Rossum, criador do Python</span>
+        </p>
+      </div>
+    </section>
+
+    <section class="cards-conteudo">
+      <h2 style="text-align:center; margin-bottom:20px;">📚 Aprenda com Conteúdo Exclusivo</h2>
+      <div class="cards-modulos">
+        <div class="card conteudo-card" onclick="abrirCard(this, 'programacao')">
+          <div class="icone"><i class="fas fa-terminal fa-2x"></i></div>
+          <h3>O que é Programação?</h3>
+          <p>Entenda o conceito e sua importância no mundo moderno.</p>
+        </div>
+        <div class="card conteudo-card" onclick="abrirCard(this, 'python')">
+          <div class="icone"><i class="fab fa-python fa-2x"></i></div>
+          <h3>História do Python</h3>
+          <p>Descubra como surgiu e por que é tão popular.</p>
+        </div>
+        <div class="card conteudo-card" onclick="abrirCard(this, 'aplicacoes')">
+          <div class="icone"><i class="fas fa-laptop-code fa-2x"></i></div>
+          <h3>Aplicações do Python</h3>
+          <p>Veja onde o Python é usado na prática.</p>
+        </div>
+      </div>
+    </section>
+
+    <div id="cardExpandido" class="modal-conteudo" style="display:none;">
+      <span onclick="fecharCard()" class="fechar">&times;</span>
+      <div id="conteudoExpandido"></div>
+    </div>
+
+
+
+    <!-- Módulos -->
+    <section id="modal" class="modal">
+      <div class="modal-conteudo">
+        <span onclick="fecharModal()" class="fechar">&times;</span>
+        <h2>Módulos do Curso</h2>
+        <div class="cards-modulos">
+          <div class="card modulo1">
+            <div class="icone"><i class="fas fa-rocket fa-2x"></i></div>
+            <h3>Módulo 1: Ferramentas para Programação</h3>
+            <p>Conhecendo as ferramentas necessárias para começar a programar.</p>
+            <a href="modulo1.html">Acessar módulo</a>
+          </div>
+          <div class="card modulo2">
+            <div class="icone"><i class="fas fa-list fa-2x"></i></div>
+            <h3>Módulo 2: Conceitos Básicos</h3>
+            <p>Aprenda sobre variáveis, tipos de dados e operadores.</p>
+            <a href="modulo2.html">Acessar módulo</a>
+          </div>
+          <div class="card modulo3">
+            <div class="icone"><i class="fas fa-random fa-2x"></i></div>
+            <h3>Módulo 3: Controle de Fluxo</h3>
+            <p>Domine estruturas condicionais e loops.</p>
+            <a href="modulo3.html">Acessar módulo</a>
+          </div>
+          <div class="card modulo4">
+            <div class="icone"><i class="fas fa-code fa-2x"></i></div>
+            <h3>Módulo 4: Funções</h3>
+            <p>Crie funções reutilizáveis e organize seu código de forma eficiente.</p>
+            <a href="modulo4.html">Acessar módulo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rodapé removido -->
+  </div>
+</body>
+</html>
+
+
+
+
+
+

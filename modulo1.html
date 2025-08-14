@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Módulo 1 - Ferramentas para Programação</title>
+  <link rel="stylesheet" href="css/index1.css" />
+  <link rel="stylesheet" href="css/modulo1.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="js/modulo1.js" defer></script>
+  <script>
+    // Verificar se o usuário está logado
+    window.addEventListener('DOMContentLoaded', function() {
+      if (!localStorage.getItem('usuarioLogado')) {
+        // Se não estiver logado, redirecionar para a página de login
+        window.location.href = 'index1.html';
+      }
+    });
+  </script>
+</head>
+<body>
+  <!-- Conteúdo principal -->
+  <div id="telaHome">
+    <header class="cabecalho">
+      <div class="cabecalho-overlay"></div>
+      <nav>
+        <!-- Tag p removida aqui -->
+        <ul>
+          <li><a href="index1.html">Home</a></li>
+          <!-- <li><a href="#">Sobre o Projeto</a></li> -->
+        </ul>
+        <button id="botaoLogout" onclick="logout()">Sair</button>
+      </nav>
+      <div class="conteudo">
+        <title>Módulo 1 - PyCode Arena</title>
+
+        <nav>
+          <!-- Tag p removida aqui -->
+        </nav>
+        
+        <div class="conteudo">
+          <h1>Módulo 1 - Ferramentas para Programação</h1> <!-- Cor #FFD43B aplicada via CSS -->
+          <p>Bem-vindo à primeira batalha! Vamos dominar os fundamentos.</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Conteúdo específico do módulo 1 -->
+    <section class="modulo-conteudo">
+      <h2>🛠️ Preparando o Ambiente de Desenvolvimento</h2>
+      <p>Aqui você aprenderá sobre as ferramentas necessárias para começar a programar em Python.</p>
+      
+      <div class="topico-imagem">
+        <img src="img/Programming_concept.png" alt="Conceito de Programação" class="imagem-topico">
+      </div>
+      
+      <h3>📝 Editores de Código e IDEs</h3>
+      <p>Existem várias opções de editores e ambientes de desenvolvimento para programar em Python:</p>
+      
+      <div class="editores-grid">
+        <div class="editor-card">
+          <img src="img/vscode-editor.jpg" alt="Visual Studio Code" class="editor-img">
+          <div class="editor-info">
+            <h4>Visual Studio Code</h4>
+            <p>Editor gratuito e muito popular da Microsoft, com extensões para Python.</p>
+            <ul>
+              <li>Gratuito e open source</li>
+              <li>Extensões para Python</li>
+              <li>Depurador integrado</li>
+              <li>Terminal integrado</li>
+              <li>Git integrado</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="editor-card">
+          <img src="img/pycharm-ide.jpg" alt="PyCharm IDE" class="editor-img">
+          <div class="editor-info">
+            <h4>PyCharm</h4>
+            <p>IDE completa para Python desenvolvida pela JetBrains.</p>
+            <ul>
+              <li>Autocompletar inteligente</li>
+              <li>Depurador avançado</li>
+              <li>Integração com Git</li>
+              <li>Suporte a frameworks</li>
+              <li>Refatoração de código</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="editor-card">
+          <img src="img/google-colab-install.jpeg" alt="Google Colab" class="editor-img">
+          <div class="editor-info">
+            <h4>Google Colab</h4>
+            <p>Ambiente online gratuito do Google para executar código Python.</p>
+            <ul>
+              <li>Não precisa instalar nada</li>
+              <li>Acesso gratuito a GPUs</li>
+              <li>Colaboração em tempo real</li>
+              <li>Bibliotecas pré-instaladas</li>
+              <li>Integração com Google Drive</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <h3>🐍 Instalação do Python</h3>
+      <div class="python-section">
+        <div class="python-info">
+          <img src="img/python-logo.png" alt="Logo do Python" class="python-logo">
+          <div class="python-text">
+            <p>Para começar a programar, você precisa instalar o Python em seu computador.</p>
+            <p><strong>Tutorial de Instalação:</strong></p>
+          </div>
+        </div>
+        
+        <div class="tutorial-steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h4>Acesse o site oficial</h4>
+              <p>Visite <a href="https://python.org" target="_blank">python.org</a> e clique em "Download Python"</p>
+              <img src="img/python-install-step1.png" alt="Site do Python" class="tutorial-img">
+            </div>
+          </div>
+          
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h4>Execute o instalador</h4>
+              <p>Baixe o arquivo e execute como administrador. <strong>Importante:</strong> Marque a opção "Add Python to PATH"</p>
+              <img src="img/python-install-step2.png" alt="Instalador do Python" class="tutorial-img">
+            </div>
+          </div>
+          
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h4>Verifique a instalação</h4>
+              <p>Após a instalação, o Python estará pronto para uso. Você pode verificar se foi instalado corretamente abrindo qualquer editor de código e criando seu primeiro programa!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <h3>📦 Gerenciadores de Pacotes</h3>
+      <div class="pip-section">
+        <img src="img/linguagem-python-1024x579-1.jpg" alt="Python Packages" class="imagem-topico">
+        <p>O pip é o gerenciador de pacotes padrão do Python, permitindo instalar bibliotecas externas facilmente através dos editores de código.</p>
+        <div class="pip-info">
+          <h4>Bibliotecas populares que você pode instalar:</h4>
+          <ul>
+            <li><strong>NumPy:</strong> Para computação científica e arrays</li>
+            <li><strong>Pandas:</strong> Para análise e manipulação de dados</li>
+            <li><strong>Matplotlib:</strong> Para criação de gráficos</li>
+            <li><strong>Requests:</strong> Para fazer requisições HTTP</li>
+            <li><strong>Django:</strong> Framework para desenvolvimento web</li>
+          </ul>
+        </div>
+      </div>
+      
+      <h3>☁️ Alternativa Online: Google Colab</h3>
+      <div class="colab-section">
+        <div class="colab-info">
+          <img src="img/google-colab-install.jpeg" alt="Google Colab Interface" class="colab-img">
+          <div class="colab-text">
+            <h4>Por que usar o Google Colab?</h4>
+            <ul>
+              <li><strong>Sem instalação:</strong> Funciona direto no navegador</li>
+              <li><strong>Gratuito:</strong> Acesso a recursos de computação em nuvem</li>
+              <li><strong>Colaborativo:</strong> Compartilhe e trabalhe em equipe</li>
+              <li><strong>Bibliotecas pré-instaladas:</strong> NumPy, Pandas, TensorFlow já incluídos</li>
+            </ul>
+            <p><strong>Como começar:</strong> Acesse <a href="https://colab.research.google.com" target="_blank">colab.research.google.com</a> e faça login com sua conta Google.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="conclusao">
+        <h3>🎯 Próximos Passos</h3>
+        <p>Com essas ferramentas instaladas e configuradas, você estará pronto para começar sua jornada na programação Python!</p>
+        <img src="img/próximos-passos.jpg" alt="Próximos Passos" class="imagem-topico">
+        
+        <div class="proximos-passos">
+          <h4>Recomendações para iniciantes:</h4>
+          <ol>
+            <li>Comece com o <strong>Google Colab</strong> se quiser testar rapidamente</li>
+            <li>Instale o <strong>Python + VS Code</strong> para desenvolvimento local</li>
+            <li>Explore as bibliotecas mais populares</li>
+            <li>Pratique com projetos simples</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

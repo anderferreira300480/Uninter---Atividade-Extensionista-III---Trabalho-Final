@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Módulo 4 - Funções em Python</title>
+  <link rel="stylesheet" href="css/index1.css" />
+  <link rel="stylesheet" href="css/modulo4.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="js/modulo4.js" defer></script>
+  <script>
+    // Verificar se o usuário está logado
+    window.addEventListener('DOMContentLoaded', function() {
+      if (!localStorage.getItem('usuarioLogado')) {
+        // Se não estiver logado, redirecionar para a página de login
+        window.location.href = 'index1.html';
+      }
+    });
+  </script>
+</head>
+<body>
+  <!-- Conteúdo principal -->
+  <div id="telaHome">
+    <header class="cabecalho">
+      <div class="cabecalho-overlay"></div>
+      <nav>
+        <!-- Tag p removida aqui -->
+        <ul>
+          <li><a href="index1.html">Home</a></li>
+          <!-- <li><a href="#">Sobre o Projeto</a></li> -->
+        </ul>
+        <button id="botaoLogout" onclick="logout()">Sair</button>
+      </nav>
+      <div class="conteudo">
+        <h1>Módulo 4 - Funções em Python</h1> <!-- Cor #FFD43B aplicada via CSS -->
+        <p>Domine o poder das funções! Organize e reutilize seu código.</p>
+        <p>Aprenda a criar, usar e otimizar funções em Python</p>
+      </div>
+    </header>
+
+    <!-- Conteúdo específico do módulo 4 -->
+    <section class="modulo-conteudo">
+      <h2>🔧 Funções em Python</h2>
+      <p>As funções são blocos de código reutilizáveis que executam tarefas específicas. Elas são fundamentais para organizar seu código, evitar repetições e criar programas mais eficientes e legíveis. Com funções, você pode dividir problemas complexos em partes menores e mais gerenciáveis.</p>
+      
+      <div class="topico-imagem">
+        <img src="img/photo-1484417894907-623942c8ee29.avif" alt="Funções Python" class="imagem-topico">
+      </div>
+      
+      <!-- Console Python Interativo -->
+      <div class="console-section">
+        <h3>🖥️ Console Python Interativo</h3>
+        <p style="color: #FFD43B; font-weight: 600;">Teste funções diretamente no navegador! Defina suas próprias funções e veja como elas funcionam. Este console suporta definição de funções, chamadas com parâmetros e muito mais.</p>
+        <div class="python-console">
+          <div class="console-header">
+            <span class="console-title">Python Console</span>
+            <button onclick="limparConsole()" class="btn-limpar">Limpar</button>
+          </div>
+          <div class="console-output" id="consoleOutput">
+            <div class="console-line">Python 3.9.0 - Console Interativo</div>
+            <div class="console-line">Digite seus comandos Python abaixo:</div>
+          </div>
+          <div class="console-input-container">
+            <span class="console-prompt">>>> </span>
+            <input type="text" id="consoleInput" class="console-input" placeholder="Digite seu código Python aqui..." onkeypress="executarComando(event)">
+          </div>
+        </div>
+      </div>
+
+      <h3>🎯 Definindo Funções</h3>
+      <p>Uma função é definida usando a palavra-chave <code>def</code>, seguida pelo nome da função e parênteses. O código da função fica indentado abaixo da definição. Funções podem ou não retornar valores e podem receber parâmetros para trabalhar com dados diferentes.</p>
+      
+      <div class="conceito-card">
+        <h4>Função Básica sem Parâmetros:</h4>
+        <p>A forma mais simples de função. Executa um conjunto de instruções quando chamada.</p>
+        <div class="codigo-exemplo">
+          <pre><code>def saudacao():
+    print("Olá! Bem-vindo ao Python!")
+    print("Vamos aprender funções!")
+    print("Prepare-se para uma jornada incrível!")
+
+# Chamando a função
+saudacao()
+print("---")
+saudacao()  # Pode ser chamada quantas vezes quiser</code></pre>
+        </div>
+        <button onclick="executarExemplo(1)" class="btn-executar">▶️ Executar no Console</button>
+      </div>
+
+      <div class="dica-importante">
+        <h4>💡 Regras para Nomes de Funções:</h4>
+        <p>Assim como variáveis, os nomes de funções seguem regras específicas:</p>
+        <ul>
+          <li><strong>Começar com letra ou underscore:</strong> Nunca com números</li>
+          <li><strong>Usar apenas letras, números e underscores:</strong> Sem espaços ou caracteres especiais</li>
+          <li><strong>Ser descritivos:</strong> 'calcular_media' é melhor que 'calc'</li>
+          <li><strong>Usar snake_case:</strong> Palavras separadas por underscore</li>
+          <li><strong>Evitar palavras reservadas:</strong> Como if, for, while, etc.</li>
+        </ul>
+      </div>
+
+      <h3>📥 Parâmetros e Argumentos</h3>
+      <p>Parâmetros tornam as funções mais flexíveis, permitindo que elas trabalhem com dados diferentes a cada chamada. Os parâmetros são definidos entre parênteses na definição da função, e os valores passados são chamados de argumentos.</p>
+      
+      <div class="parametros-grid">
+        <div class="parametro-card">
+          <div class="parametro-header">
+            <i class="fas fa-arrow-right"></i>
+            <h4>Parâmetros Simples</h4>
+          </div>
+          <p><strong>Funções que recebem dados para processar.</strong> Os parâmetros são como variáveis locais que recebem os valores passados na chamada da função.</p>
+          <div class="codigo-exemplo">
+            <pre><code>def saudacao_personalizada(nome, idade):
+    print(f"Olá, {nome}!")
+    print(f"Você tem {idade} anos.")
+    print("Seja bem-vindo ao mundo da programação!")
+    print("---")
+
+# Chamando com diferentes argumentos
+saudacao_personalizada("Ana", 25)
+saudacao_personalizada("Carlos", 30)
+saudacao_personalizada("Maria", 22)</code></pre>
+          </div>
+          <button onclick="executarExemplo(2)" class="btn-executar">▶️ Testar</button>
+        </div>
+
+
+
+        <div class="parametro-card">
+          <div class="parametro-header">
+            <i class="fas fa-tag"></i>
+            <h4>Argumentos Nomeados</h4>
+          </div>
+          <p><strong>Chamadas mais claras especificando nomes.</strong> Você pode passar argumentos em qualquer ordem quando usa seus nomes.</p>
+          <div class="codigo-exemplo">
+            <pre><code>def criar_perfil(nome, idade, profissao, cidade):
+    print(f"=== PERFIL ===")
+    print(f"Nome: {nome}")
+    print(f"Idade: {idade} anos")
+    print(f"Profissão: {profissao}")
+    print(f"Cidade: {cidade}")
+    print("=============\n")
+
+# Argumentos em ordem diferente usando nomes
+criar_perfil(idade=30, nome="Ana", cidade="Rio de Janeiro", profissao="Desenvolvedora")</code></pre>
+          </div>
+          <button onclick="executarExemplo(3)" class="btn-executar">▶️ Testar</button>
+        </div>
+      </div>
+
+      <h3>↩️ Valores de Retorno</h3>
+      <p>Funções podem retornar valores usando a palavra-chave <code>return</code>. Isso permite que você use o resultado da função em outras partes do seu código, armazenando em variáveis ou usando em cálculos.</p>
+
+      <div class="retorno-section">
+        <div class="retorno-card">
+          <h4>🔄 Funções que Retornam Valores</h4>
+          <p>Use <code>return</code> para enviar um resultado de volta para quem chamou a função.</p>
+          <div class="codigo-exemplo">
+            <pre><code>def calcular_area_retangulo(largura, altura):
+    area = largura * altura
+    return area
+
+def calcular_perimetro_retangulo(largura, altura):
+    perimetro = 2 * (largura + altura)
+    return perimetro
+
+# Usando os valores retornados
+area1 = calcular_area_retangulo(5, 3)
+area2 = calcular_area_retangulo(10, 7)
+perimetro1 = calcular_perimetro_retangulo(5, 3)
+
+print(f"Área do retângulo 1: {area1}")
+print(f"Área do retângulo 2: {area2}")
+print(f"Perímetro do retângulo 1: {perimetro1}")
+print(f"Área total: {area1 + area2}")</code></pre>
+          </div>
+          <button onclick="executarExemplo(5)" class="btn-executar">▶️ Executar</button>
+        </div>
+
+        <div class="retorno-card">
+          <h4>🔢 Múltiplos Valores de Retorno</h4>
+          <p>Python permite retornar múltiplos valores separados por vírgula.</p>
+          <div class="codigo-exemplo">
+            <pre><code>def analisar_numero(numero):
+    eh_par = numero % 2 == 0
+    eh_positivo = numero > 0
+    quadrado = numero ** 2
+    return eh_par, eh_positivo, quadrado
+
+# Recebendo múltiplos valores
+par, positivo, quad = analisar_numero(8)
+
+print(f"Número: 8")
+print(f"É par? {par}")
+print(f"É positivo? {positivo}")
+print(f"Quadrado: {quad}")</code></pre>
+          </div>
+          <button onclick="executarExemplo(6)" class="btn-executar">▶️ Executar</button>
+        </div>
+      </div>
+
+      <h3>🌐 Escopo de Variáveis</h3>
+      <p>O escopo determina onde uma variável pode ser acessada no seu código. Variáveis criadas dentro de funções são locais, enquanto variáveis criadas fora são globais. Entender escopo é crucial para evitar erros e escrever código limpo.</p>
+
+      <div class="escopo-grid">
+        <div class="escopo-card">
+          <h4>🏠 Variáveis Locais</h4>
+          <p>Existem apenas dentro da função onde foram criadas.</p>
+          <div class="codigo-exemplo">
+            <pre><code>def exemplo_local():
+    variavel_local = "Só existe aqui dentro"
+    print(f"Dentro da função: {variavel_local}")
+    return variavel_local
+
+# Chamando a função
+resultado = exemplo_local()
+print(f"Resultado retornado: {resultado}")
+
+# Esta linha causaria erro se descomentada:
+# print(variavel_local)  # NameError!</code></pre>
+          </div>
+          <button onclick="executarExemplo(7)" class="btn-executar">▶️ Testar</button>
+        </div>
+
+        <div class="escopo-card">
+          <h4>🌍 Variáveis Globais</h4>
+          <p>Podem ser acessadas de qualquer lugar do programa.</p>
+          <div class="codigo-exemplo">
+            <pre><code># Variável global
+contador_global = 0
+
+def incrementar_contador():
+    global contador_global
+    contador_global += 1
+    print(f"Contador dentro da função: {contador_global}")
+
+def mostrar_contador():
+    print(f"Contador atual: {contador_global}")
+
+# Testando o escopo global
+mostrar_contador()
+incrementar_contador()
+incrementar_contador()
+mostrar_contador()</code></pre>
+          </div>
+          <button onclick="executarExemplo(8)" class="btn-executar">▶️ Testar</button>
+        </div>
+      </div>
+
+      <!-- Substituir a seção de exemplos atuais por: -->
+      
+      <h3>📥 Exemplos de Funções</h3>
+      <p>Vamos aprender funções com exemplos simples e práticos.</p>
+      
+      <div class="exemplos-grid">
+        <!-- Exemplo 1: Função Simples -->
+        <div class="exemplo-card">
+          <h4>🎯 Função Básica</h4>
+          <p>Uma função simples que exibe uma mensagem.</p>
+          <div class="codigo-exemplo">
+            <pre><code>def saudacao():
+        print("Olá! Bem-vindo ao Python!")
+        print("Vamos aprender funções!")
+      
+      # Chamando a função
+      saudacao()</code></pre>
+          </div>
+          <button onclick="executarExemplo(1)" class="btn-executar">▶️ Executar</button>
+        </div>
+      
+        <!-- Exemplo 2: Função com Parâmetros -->
+        <div class="exemplo-card">
+          <h4>📝 Função com Parâmetros</h4>
+          <p>Função que recebe dados para processar.</p>
+          <div class="codigo-exemplo">
+            <pre><code>def cumprimentar(nome):
+        print(f"Olá, {nome}!")
+        print("Como você está?")
+      
+      # Testando com diferentes nomes
+      cumprimentar("Ana")
+      cumprimentar("João")</code></pre>
+          </div>
+          <button onclick="executarExemplo(2)" class="btn-executar">▶️ Executar</button>
+        </div>
+      
+        <!-- Exemplo 3: Função que Retorna Valor -->
+        <div class="exemplo-card">
+          <h4>↩️ Função com Retorno</h4>
+          <p>Função que calcula e retorna um resultado.</p>
+          <div class="codigo-exemplo">
+            <pre><code>def somar(a, b):
+        resultado = a + b
+        return resultado
+      
+      # Usando o resultado
+      num1 = somar(5, 3)
+      num2 = somar(10, 7)
+      print(f"Primeira soma: {num1}")
+      print(f"Segunda soma: {num2}")
+      print(f"Total: {num1 + num2}")</code></pre>
+          </div>
+          <button onclick="executarExemplo(3)" class="btn-executar">▶️ Executar</button>
+        </div>
+      
+        <!-- Exemplo 4: Múltiplos Parâmetros -->
+        <div class="exemplo-card">
+          <h4>🔢 Múltiplos Parâmetros</h4>
+          <p>Função com vários parâmetros.</p>
+          <div class="codigo-exemplo">
+            <pre><code>def calcular_media(nota1, nota2, nota3):
+        media = (nota1 + nota2 + nota3) / 3
+        return media
+      
+      # Calculando médias
+      media_ana = calcular_media(8.5, 9.0, 7.5)
+      media_joao = calcular_media(7.0, 8.0, 9.0)
+      
+      print(f"Média da Ana: {media_ana:.1f}")
+      print(f"Média do João: {media_joao:.1f}")</code></pre>
+          </div>
+          <button onclick="executarExemplo(4)" class="btn-executar">▶️ Executar</button>
+        </div>
+      </div>
+      
+      <h3>🏋️ Exercícios Práticos</h3>
+      <p>Pratique com exercícios simples e diretos.</p>
+      
+      <div class="exercicios-grid">
+        <!-- Exercício 1: Calculadora Simples -->
+        <div class="exercicio-card facil">
+          <div class="exercicio-header">
+            <span class="nivel">😊 FÁCIL</span>
+            <h4>Calculadora Simples</h4>
+          </div>
+          <p><strong>Desafio:</strong> Crie funções para operações matemáticas básicas.</p>
+          <button onclick="mostrarSolucao(1)" class="btn-solucao">💡 Ver Solução</button>
+          <div id="solucao1" class="solucao" style="display: none;">
+            <div class="codigo-exemplo">
+              <pre><code>def multiplicar(x, y):
+        return x * y
+      
+      def dividir(x, y):
+        return x / y
+      
+      # Testando as funções
+      result1 = multiplicar(6, 4)
+      result2 = dividir(15, 3)
+      
+      print(f"6 x 4 = {result1}")
+      print(f"15 ÷ 3 = {result2}")</code></pre>
+            </div>
+            <button onclick="executarExemplo(5)" class="btn-executar">▶️ Executar</button>
+          </div>
+        </div>
+      
+        <!-- Exercício 2: Verificador de Idade -->
+        <div class="exercicio-card medio">
+          <div class="exercicio-header">
+            <span class="nivel">🤔 MÉDIO</span>
+            <h4>Verificador de Idade</h4>
+          </div>
+          <p><strong>Desafio:</strong> Função que classifica pessoas por faixa etária.</p>
+          <button onclick="mostrarSolucao(2)" class="btn-solucao">💡 Ver Solução</button>
+          <div id="solucao2" class="solucao" style="display: none;">
+            <div class="codigo-exemplo">
+              <pre><code>def classificar_idade(idade):
+        if idade < 18:
+            return "Menor de idade"
+        elif idade < 60:
+            return "Adulto"
+        else:
+            return "Idoso"
+      
+      # Testando com diferentes idades
+      print(f"15 anos: {classificar_idade(15)}")
+      print(f"25 anos: {classificar_idade(25)}")
+      print(f"65 anos: {classificar_idade(65)}")</code></pre>
+            </div>
+            <button onclick="executarExemplo(6)" class="btn-executar">▶️ Executar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="resumo-modulo">
+        <h3>📋 Resumo do Módulo</h3>
+        <p>Parabéns! Você completou o Módulo 4 e agora domina os conceitos fundamentais de funções em Python. Aqui está um resumo do que você aprendeu:</p>
+        
+        <div class="resumo-grid">
+          <div class="resumo-item">
+            <i class="fas fa-code"></i>
+            <h4>Definição de Funções</h4>
+            <p>Como criar funções usando <code>def</code>, organizar código em blocos reutilizáveis e seguir boas práticas de nomenclatura.</p>
+          </div>
+          
+          <div class="resumo-item">
+            <i class="fas fa-arrow-right"></i>
+            <h4>Parâmetros e Argumentos</h4>
+            <p>Diferentes tipos de parâmetros: simples, com valores padrão e argumentos nomeados para maior flexibilidade.</p>
+          </div>
+          
+          <div class="resumo-item">
+            <i class="fas fa-undo"></i>
+            <h4>Valores de Retorno</h4>
+            <p>Como usar <code>return</code> para enviar resultados de volta, incluindo múltiplos valores de retorno.</p>
+          </div>
+          
+          <div class="resumo-item">
+            <i class="fas fa-globe"></i>
+            <h4>Escopo de Variáveis</h4>
+            <p>Diferença entre variáveis locais e globais, e como o escopo afeta o acesso às variáveis.</p>
+          </div>
+          
+          <div class="resumo-item">
+            <i class="fas fa-tools"></i>
+            <h4>Organização de Código</h4>
+            <p>Como usar funções para dividir problemas complexos em partes menores e mais gerenciáveis.</p>
+          </div>
+          
+          <div class="resumo-item">
+            <i class="fas fa-puzzle-piece"></i>
+            <h4>Reutilização</h4>
+            <p>Benefícios de escrever código reutilizável e como funções facilitam a manutenção de programas.</p>
+          </div>
+        </div>
+
+        <div class="proximos-passos">
+          <h4>🚀 Próximos Passos Recomendados:</h4>
+          <ul>
+            <li><strong>Pratique mais:</strong> Crie suas próprias funções para resolver problemas do dia a dia</li>
+            <li><strong>Explore bibliotecas:</strong> Aprenda a usar funções de bibliotecas como <code>math</code>, <code>random</code> e <code>datetime</code></li>
+            <li><strong>Estude recursão:</strong> Funções que chamam a si mesmas para resolver problemas complexos</li>
+            <li><strong>Aprenda sobre decoradores:</strong> Uma funcionalidade avançada do Python para modificar funções</li>
+            <li><strong>Projetos práticos:</strong> Use funções em projetos reais como calculadoras, jogos simples ou sistemas de gerenciamento</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="conclusao-curso">
+        <h3>🎉 Curso Concluído!</h3>
+        <div class="conclusao-content">
+          <div class="conclusao-texto">
+            <h4>Parabéns por completar todos os 4 módulos!</h4>
+            <p>Você agora possui uma base sólida em Python e está pronto para enfrentar desafios mais complexos. Durante esta jornada, você aprendeu:</p>
+            
+            <div class="modulos-completados">
+              <div class="modulo-completado">
+                <span class="numero">1</span>
+                <div class="info">
+                  <h5>Introdução ao Python</h5>
+                  <p>História, instalação e primeiros passos</p>
+                </div>
+              </div>
+              
+              <div class="modulo-completado">
+                <span class="numero">2</span>
+                <div class="info">
+                  <h5>Fundamentos da Programação</h5>
+                  <p>Variáveis, tipos de dados e operadores</p>
+                </div>
+              </div>
+              
+              <div class="modulo-completado">
+                <span class="numero">3</span>
+                <div class="info">
+                  <h5>Controle de Fluxo</h5>
+                  <p>Condicionais, loops e estruturas de decisão</p>
+                </div>
+              </div>
+              
+              <div class="modulo-completado">
+                <span class="numero">4</span>
+                <div class="info">
+                  <h5>Funções</h5>
+                  <p>Organização, reutilização e estruturação de código</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="conclusao-imagem">
+            <img src="img/próximos-passos.jpg" alt="Próximos passos" class="imagem-conclusao">
+          </div>
+        </div>
+
+        <div class="dicas-finais">
+          <h4>💡 Dicas Finais para Continuar Evoluindo:</h4>
+          <div class="dicas-grid">
+            <div class="dica">
+              <i class="fas fa-book"></i>
+              <h5>Continue Estudando</h5>
+              <p>Explore tópicos avançados como orientação a objetos, manipulação de arquivos e APIs</p>
+            </div>
+            
+            <div class="dica">
+              <i class="fas fa-code"></i>
+              <h5>Pratique Diariamente</h5>
+              <p>Resolva exercícios em plataformas como HackerRank, LeetCode ou Codewars</p>
+            </div>
+            
+            <div class="dica">
+              <i class="fas fa-project-diagram"></i>
+              <h5>Crie Projetos</h5>
+              <p>Desenvolva aplicações reais: calculadoras, jogos, sistemas de gerenciamento</p>
+            </div>
+            
+            <div class="dica">
+              <i class="fas fa-users"></i>
+              <h5>Participe da Comunidade</h5>
+              <p>Junte-se a fóruns, grupos no Discord/Telegram e contribua com projetos open source</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

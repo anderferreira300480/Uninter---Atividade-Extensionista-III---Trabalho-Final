@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Módulo 2 - Fundamentos da Programação Python</title>
+  <link rel="stylesheet" href="css/index1.css" />
+  <link rel="stylesheet" href="css/modulo2.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="js/modulo2.js" defer></script>
+  <script>
+    // Verificar se o usuário está logado
+    window.addEventListener('DOMContentLoaded', function() {
+      if (!localStorage.getItem('usuarioLogado')) {
+        // Se não estiver logado, redirecionar para a página de login
+        window.location.href = 'index1.html';
+      }
+    });
+  </script>
+</head>
+<body>
+  <!-- Conteúdo principal -->
+  <div id="telaHome">
+    <header class="cabecalho">
+      <div class="cabecalho-overlay"></div>
+      <nav>
+        <!-- Tag p removida aqui -->
+        <ul>
+          <li><a href="index1.html">Home</a></li>
+          <!-- <li><a href="#">Sobre o Projeto</a></li> -->
+        </ul>
+        <button id="botaoLogout" onclick="logout()">Sair</button>
+      </nav>
+      <div class="conteudo">
+        <h1>Módulo 2 - Fundamentos da Programação Python</h1> <!-- Cor #FFD43B aplicada via CSS -->
+        <p>Avance para o próximo nível! Hora de praticar com o console interativo.</p>
+        <p>Aprenda sobre variáveis, tipos de dados e operadores</p>
+      </div>
+    </header>
+
+    <!-- Conteúdo específico do módulo 2 -->
+    <section class="modulo-conteudo">
+      <h2>🧱 Fundamentos da Programação Python</h2>
+      <p>Neste módulo, você aprenderá os conceitos fundamentais que são a base de qualquer programa Python. Estes conceitos são essenciais para construir programas mais complexos e são utilizados em praticamente todos os projetos de programação.</p>
+      
+      <div class="topico-imagem">
+        <img src="img/code-python.jpg" alt="Código Python" class="imagem-topico">
+      </div>
+      
+      <!-- Console Python Interativo -->
+      <div class="console-section">
+        <h3>🖥️ Console Python Interativo</h3>
+        <p style="color: #FFD43B; font-weight: 600;">Teste os códigos diretamente no navegador! Digite comandos Python e veja os resultados instantaneamente. Este console simula o comportamento do Python real, permitindo que você experimente com variáveis, operações e comandos básicos.</p>
+        <div class="python-console">
+          <div class="console-header">
+            <span class="console-title">Python Console</span>
+            <button onclick="limparConsole()" class="btn-limpar">Limpar</button>
+          </div>
+          <div class="console-output" id="consoleOutput">
+            <div class="console-line">Python 3.9.0 - Console Interativo</div>
+            <div class="console-line">Digite seus comandos Python abaixo:</div>
+          </div>
+          <div class="console-input-container">
+            <span class="console-prompt">>>> </span>
+            <input type="text" id="consoleInput" class="console-input" placeholder="Digite seu código Python aqui..." onkeypress="executarComando(event)">
+          </div>
+        </div>
+      </div>
+
+      <h3>📊 Variáveis em Python</h3>
+      <p>Variáveis são como "caixas" ou "contêineres" que armazenam valores na memória do computador. Em Python, você não precisa declarar o tipo da variável antecipadamente - ela é definida automaticamente baseada no valor que você atribui! Isso torna Python uma linguagem de tipagem dinâmica, muito mais flexível que outras linguagens.</p>
+      
+      <div class="conceito-card">
+        <h4>Como criar e usar variáveis:</h4>
+        <p>Para criar uma variável em Python, simplesmente use o operador de atribuição (=). O nome da variável fica à esquerda e o valor à direita.</p>
+        <div class="codigo-exemplo">
+          <pre><code>nome = "Maria"
+idade = 25
+altura = 1.65
+estudante = True
+
+print(nome)
+print(idade)
+print(altura)
+print(estudante)</code></pre>
+        </div>
+        <button onclick="executarExemplo(1)" class="btn-executar">▶️ Executar no Console</button>
+      </div>
+
+      <div class="dica-importante">
+        <h4>💡 Regras para Nomes de Variáveis:</h4>
+        <p>Em Python, os nomes de variáveis devem seguir algumas regras importantes:</p>
+        <ul>
+          <li><strong>Começar com letra ou underscore (_):</strong> Nunca com números</li>
+          <li><strong>Conter apenas letras, números e underscores:</strong> Sem espaços ou caracteres especiais</li>
+          <li><strong>Ser case-sensitive:</strong> 'nome' é diferente de 'Nome' ou 'NOME'</li>
+          <li><strong>Não usar palavras reservadas:</strong> Como if, for, while, class, def, etc.</li>
+          <li><strong>Usar nomes descritivos:</strong> 'idade_usuario' é melhor que 'x'</li>
+        </ul>
+      </div>
+
+      <h3>🏷️ Tipos de Dados Fundamentais</h3>
+      <p>Python possui vários tipos de dados básicos que são fundamentais para qualquer programa. Cada tipo tem características específicas e é usado para diferentes propósitos. Vamos conhecer os quatro tipos mais importantes:</p>
+      
+      <div class="tipos-grid">
+        <div class="tipo-card">
+          <div class="tipo-header">
+            <i class="fas fa-quote-right"></i>
+            <h4>String (str)</h4>
+          </div>
+          <p><strong>Armazena texto e caracteres.</strong> Strings podem ser criadas com aspas simples (') ou duplas ("). São muito úteis para armazenar nomes, mensagens, endereços e qualquer tipo de texto.</p>
+          <div class="codigo-exemplo">
+            <pre><code>nome = "Python"
+mensagem = 'Olá mundo!'
+texto_longo = "Este é um texto mais longo"
+
+print(nome)
+print(mensagem)
+print(texto_longo)</code></pre>
+          </div>
+          <button onclick="executarExemplo(2)" class="btn-executar">▶️ Testar</button>
+        </div>
+
+        <div class="tipo-card">
+          <div class="tipo-header">
+            <i class="fas fa-calculator"></i>
+            <h4>Integer (int)</h4>
+          </div>
+          <p><strong>Números inteiros positivos ou negativos.</strong> Usados para contagens, idades, quantidades e qualquer valor que não tenha parte decimal. Python pode trabalhar com inteiros muito grandes!</p>
+          <div class="codigo-exemplo">
+            <pre><code>idade = 30
+pontos = -15
+grande = 1000000
+
+print(idade)
+print(pontos)
+print(grande)</code></pre>
+          </div>
+          <button onclick="executarExemplo(3)" class="btn-executar">▶️ Testar</button>
+        </div>
+
+        <div class="tipo-card">
+          <div class="tipo-header">
+            <i class="fas fa-percentage"></i>
+            <h4>Float (float)</h4>
+          </div>
+          <p><strong>Números decimais (ponto flutuante).</strong> Usados para valores que precisam de precisão decimal, como preços, medidas, temperaturas e cálculos científicos.</p>
+          <div class="codigo-exemplo">
+            <pre><code>preco = 19.99
+temperatura = -5.5
+pi = 3.14159
+
+print(preco)
+print(temperatura)
+print(pi)</code></pre>
+          </div>
+          <button onclick="executarExemplo(4)" class="btn-executar">▶️ Testar</button>
+        </div>
+
+        <div class="tipo-card">
+          <div class="tipo-header">
+            <i class="fas fa-toggle-on"></i>
+            <h4>Boolean (bool)</h4>
+          </div>
+          <p><strong>Valores lógicos: True (verdadeiro) ou False (falso).</strong> Fundamentais para tomada de decisões, condições e controle de fluxo em programas. Note que em Python, True e False começam com letra maiúscula!</p>
+          <div class="codigo-exemplo">
+            <pre><code>ativo = True
+desabilitado = False
+maior_idade = 18 >= 18
+
+print(ativo)
+print(desabilitado)
+print(maior_idade)</code></pre>
+          </div>
+          <button onclick="executarExemplo(5)" class="btn-executar">▶️ Testar</button>
+        </div>
+      </div>
+
+      <h3>🔧 Operadores: As Ferramentas da Programação</h3>
+      <p>Os operadores são símbolos especiais que permitem realizar operações com variáveis e valores. Eles são as "ferramentas" que usamos para manipular dados, fazer cálculos e tomar decisões em nossos programas.</p>
+
+      <div class="operadores-section">
+        <div class="operador-categoria">
+          <h4>➕ Operadores Aritméticos</h4>
+          <p>Usados para realizar cálculos matemáticos básicos e avançados. São fundamentais em qualquer programa que envolva números e cálculos.</p>
+          <div class="operadores-grid">
+            <div class="operador-item">
+              <span class="operador">+</span>
+              <span class="descricao">Adição</span>
+              <span class="exemplo">5 + 3 = 8</span>
+            </div>
+            <div class="operador-item">
+              <span class="operador">-</span>
+              <span class="descricao">Subtração</span>
+              <span class="exemplo">5 - 3 = 2</span>
+            </div>
+            <div class="operador-item">
+              <span class="operador">*</span>
+              <span class="descricao">Multiplicação</span>
+              <span class="exemplo">5 * 3 = 15</span>
+            </div>
+            <div class="operador-item">
+              <span class="operador">/</span>
+              <span class="descricao">Divisão (resultado decimal)</span>
+              <span class="exemplo">5 / 2 = 2.5</span>
+            </div>
+            <div class="operador-item">
+              <span class="operador">//</span>
+              <span class="descricao">Divisão inteira (sem decimais)</span>
+              <span class="exemplo">5 // 2 = 2</span>
+            </div>
+            <div class="operador-item">
+              <span class="operador">%</span>
+              <span class="descricao">Resto da divisão (módulo)</span>
+              <span class="exemplo">5 % 2 = 1</span>
+            </div>
+            <div class="operador-item">
+              <span class="operador">**</span>
+              <span class="descricao">Potenciação (elevado a)</span>
+              <span class="exemplo">5 ** 2 = 25</span>
+            </div>
+          </div>
+          
+          <div class="codigo-exemplo">
+            <pre><code>a = 10
+b = 3
+
+print(a + b)
+print(a - b)
+print(a * b)
+print(a / b)
+print(a // b)
+print(a % b)
+print(a ** b)</code></pre>
+          </div>
+          <button onclick="executarExemplo(6)" class="btn-executar">▶️ Executar</button>
+        </div>
+
+        <div class="operador-categoria">
+          <h4>🔍 Operadores de Comparação</h4>
+          <p>Estes operadores são usados para comparar valores e sempre retornam um resultado booleano (True ou False). São essenciais para criar condições e tomar decisões em programas. Cada operador tem um propósito específico:</p>
+          
+          <div class="comparacao-explicacao">
+            <div class="explicacao-item">
+              <h5>🎯 Quando usar cada operador:</h5>
+              <ul>
+                <li><strong>== (igual):</strong> Para verificar se dois valores são exatamente iguais</li>
+                <li><strong>!= (diferente):</strong> Para verificar se dois valores são diferentes</li>
+                <li><strong>> (maior):</strong> Para verificar se um valor é estritamente maior que outro</li>
+                <li><strong>< (menor):</strong> Para verificar se um valor é estritamente menor que outro</li>
+                <li><strong>>= (maior ou igual):</strong> Inclui a possibilidade de serem iguais</li>
+                <li><strong><= (menor ou igual):</strong> Inclui a possibilidade de serem iguais</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="operadores-grid">
+            <div class="operador-item">
+              <span class="operador">==</span>
+              <span class="descricao">Igual a</span>
+              <span class="exemplo">5 == 5 → True</span>
+            </div>
+            <div class="operador-item">
+              <span class="operador">!=</span>
+              <span class="descricao">Diferente de</span>
+              <span class="exemplo">5 != 3 → True</span>
+            </div>
+            <div class="operador-item">
+              <span class="operador">></span>
+              <span class="descricao">Maior que</span>
+              <span class="exemplo">5 > 3 → True</span>
+            </div>
+            <div class="operador-item">
+              <span class="operador"><</span>
+              <span class="descricao">Menor que</span>
+              <span class="exemplo">3 < 5 → True</span>
+            </div>
+            <div class="operador-item">
+              <span class="operador">>=</span>
+              <span class="descricao">Maior ou igual</span>
+              <span class="exemplo">5 >= 5 → True</span>
+            </div>
+            <div class="operador-item">
+              <span class="operador"><=</span>
+              <span class="descricao">Menor ou igual</span>
+              <span class="exemplo">3 <= 5 → True</span>
+            </div>
+          </div>
+          
+          <div class="exemplo-pratico">
+            <h5>💡 Exemplo Prático - Sistema de Verificação de Idade:</h5>
+            <p>Imagine um sistema que precisa verificar diferentes condições baseadas na idade de uma pessoa:</p>
+          </div>
+          
+          <div class="codigo-exemplo">
+            <pre><code>idade = 18
+limite_adulto = 21
+
+print(idade == 18)
+print(idade != limite_adulto)
+print(idade > 16)
+print(idade < limite_adulto)
+print(idade >= 18)
+print(idade <= limite_adulto)</code></pre>
+          </div>
+          <button onclick="executarExemplo(7)" class="btn-executar">▶️ Executar</button>
+        </div>
+
+        <div class="operador-categoria">
+          <h4>🔗 Operadores Lógicos</h4>
+          <p>Os operadores lógicos permitem combinar múltiplas condições e criar lógicas mais complexas. São fundamentais para criar programas que tomam decisões baseadas em múltiplos critérios.</p>
+          
+          <div class="logicos-explicacao">
+            <div class="explicacao-item">
+              <h5>🧠 Como funcionam:</h5>
+              <ul>
+                <li><strong>and:</strong> Retorna True apenas se AMBAS as condições forem verdadeiras</li>
+                <li><strong>or:</strong> Retorna True se PELO MENOS UMA das condições for verdadeira</li>
+                <li><strong>not:</strong> Inverte o valor lógico (True vira False e vice-versa)</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="operadores-grid">
+            <div class="operador-item">
+              <span class="operador">and</span>
+              <span class="descricao">E lógico (ambas verdadeiras)</span>
+              <span class="exemplo">True and False → False</span>
+            </div>
+            <div class="operador-item">
+              <span class="operador">or</span>
+              <span class="descricao">OU lógico (pelo menos uma verdadeira)</span>
+              <span class="exemplo">True or False → True</span>
+            </div>
+            <div class="operador-item">
+              <span class="operador">not</span>
+              <span class="descricao">NÃO lógico (inverte o valor)</span>
+              <span class="exemplo">not True → False</span>
+            </div>
+          </div>
+          
+          <div class="codigo-exemplo">
+            <pre><code># Exemplo prático: Sistema de permissões
+idade = 20
+tem_carteira = True
+
+pode_dirigir = idade >= 18 and tem_carteira
+print(pode_dirigir)
+
+fim_semana = True
+feriado = False
+descanso = fim_semana or feriado
+print(descanso)
+
+trabalho = not descanso
+print(trabalho)</code></pre>
+          </div>
+          <button onclick="executarExemplo(8)" class="btn-executar">▶️ Executar</button>
+        </div>
+      </div>
+
+      <!-- Exercícios Práticos -->
+      <div class="exercicios-section">
+        <h3>💪 Exercícios Práticos</h3>
+        <p>Agora é hora de colocar a mão na massa! Resolva os exercícios abaixo usando o console interativo. Cada exercício foi cuidadosamente elaborado para reforçar os conceitos aprendidos.</p>
+
+        <div class="exercicio">
+          <div class="exercicio-header">
+            <h4>📝 Exercício 1: Calculadora Básica</h4>
+            <span class="dificuldade facil">Fácil</span>
+          </div>
+          <div class="exercicio-conteudo">
+            <p><strong>Objetivo:</strong> Crie variáveis para dois números e calcule todas as operações aritméticas básicas entre eles.</p>
+            <div class="exercicio-requisitos">
+              <h5>Requisitos:</h5>
+              <ul>
+                <li>Crie duas variáveis: <code>numero1 = 15</code> e <code>numero2 = 4</code></li>
+                <li>Calcule e exiba: soma, subtração, multiplicação e divisão</li>
+                <li>Use apenas <code>print()</code> com o resultado da operação</li>
+                <li>Não use textos explicativos nos prints</li>
+              </ul>
+            </div>
+            <div class="exercicio-dica">
+              <h5>💡 Dica:</h5>
+              <p>Use <code>print(numero1 + numero2)</code> diretamente, sem textos adicionais</p>
+            </div>
+            <button onclick="mostrarSolucao(1)" class="btn-solucao">Ver Solução</button>
+            <div id="solucao1" class="solucao" style="display:none;">
+              <h5>✅ Solução:</h5>
+              <div class="codigo-exemplo">
+                <pre><code>numero1 = 15
+numero2 = 4
+
+print(numero1 + numero2)
+print(numero1 - numero2)
+print(numero1 * numero2)
+print(numero1 / numero2)</code></pre>
+              </div>
+              <button onclick="executarExemplo(9)" class="btn-executar">▶️ Executar Solução</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="exercicio">
+          <div class="exercicio-header">
+            <h4>📝 Exercício 2: Verificador de Idade</h4>
+            <span class="dificuldade medio">Médio</span>
+          </div>
+          <div class="exercicio-conteudo">
+            <p><strong>Objetivo:</strong> Crie um programa que verifica diferentes condições baseadas na idade de uma pessoa usando operadores de comparação.</p>
+            <div class="exercicio-requisitos">
+              <h5>Requisitos:</h5>
+              <ul>
+                <li>Crie uma variável <code>idade = 17</code></li>
+                <li>Crie variáveis booleanas para: pode votar (>= 16), pode dirigir (>= 18), é idoso (>= 65)</li>
+                <li>Exiba a idade e todos os resultados das verificações</li>
+                <li>Use operadores de comparação para criar as condições</li>
+              </ul>
+            </div>
+            <div class="exercicio-dica">
+              <h5>💡 Dica:</h5>
+              <p>Use <code>pode_votar = idade >= 16</code> para criar variáveis booleanas</p>
+            </div>
+            <button onclick="mostrarSolucao(2)" class="btn-solucao">Ver Solução</button>
+            <div id="solucao2" class="solucao" style="display:none;">
+              <h5>✅ Solução:</h5>
+              <div class="codigo-exemplo">
+                <pre><code>idade = 17
+
+pode_votar = idade >= 16
+pode_dirigir = idade >= 18
+e_idoso = idade >= 65
+maior_idade = idade >= 18
+
+print(idade)
+print(pode_votar)
+print(pode_dirigir)
+print(e_idoso)
+print(maior_idade)</code></pre>
+              </div>
+              <button onclick="executarExemplo(10)" class="btn-executar">▶️ Executar Solução</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="exercicio">
+          <div class="exercicio-header">
+            <h4>📝 Exercício 3: Conversor de Temperatura</h4>
+            <span class="dificuldade dificil">Difícil</span>
+          </div>
+          <div class="exercicio-conteudo">
+            <p><strong>Objetivo:</strong> Crie um conversor que transforma Celsius em Fahrenheit e Kelvin, além de fazer verificações lógicas sobre a temperatura.</p>
+            <div class="exercicio-requisitos">
+              <h5>Requisitos:</h5>
+              <ul>
+                <li>Crie uma variável <code>celsius = 25</code></li>
+                <li>Converta para Fahrenheit: <code>F = C * 9/5 + 32</code></li>
+                <li>Converta para Kelvin: <code>K = C + 273.15</code></li>
+                <li>Verifique se está acima do congelamento (> 0°C)</li>
+                <li>Verifique se é temperatura ambiente (entre 20°C e 25°C)</li>
+                <li>Exiba todos os resultados</li>
+              </ul>
+            </div>
+            <div class="exercicio-dica">
+              <h5>💡 Dica:</h5>
+              <p>Use operadores aritméticos para conversões e operadores lógicos para as verificações</p>
+            </div>
+            <button onclick="mostrarSolucao(3)" class="btn-solucao">Ver Solução</button>
+            <div id="solucao3" class="solucao" style="display:none;">
+              <h5>✅ Solução:</h5>
+              <div class="codigo-exemplo">
+                <pre><code>celsius = 25
+
+fahrenheit = celsius * 9/5 + 32
+kelvin = celsius + 273.15
+
+acima_congelamento = celsius > 0
+temperatura_ambiente = celsius >= 20 and celsius <= 25
+
+print(celsius)
+print(fahrenheit)
+print(kelvin)
+print(acima_congelamento)
+print(temperatura_ambiente)</code></pre>
+              </div>
+              <button onclick="executarExemplo(11)" class="btn-executar">▶️ Executar Solução</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="conclusao">
+        <h3>🎯 Resumo do Módulo</h3>
+        <p>Parabéns! Você concluiu com sucesso o Módulo 2 e aprendeu os conceitos fundamentais da programação Python! Estes conhecimentos são a base sólida sobre a qual você construirá programas mais complexos e interessantes.</p>
+        <img src="img/próximos-passos.jpg" alt="Próximos Passos" class="imagem-topico">
+        
+        <div class="resumo-topicos">
+          <h4>📚 O que você dominou neste módulo:</h4>
+          <div class="topicos-grid">
+            <div class="topico-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Criação e manipulação de variáveis</span>
+            </div>
+            <div class="topico-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Tipos de dados fundamentais (str, int, float, bool)</span>
+            </div>
+            <div class="topico-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Operadores aritméticos para cálculos</span>
+            </div>
+            <div class="topico-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Operadores de comparação para condições</span>
+            </div>
+            <div class="topico-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Operadores lógicos para decisões complexas</span>
+            </div>
+            <div class="topico-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Uso do console Python interativo</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="proximos-passos">
+          <h4>🚀 Próximos Passos Recomendados:</h4>
+          <ol>
+            <li>Continue praticando com o <strong>console interativo</strong> - experimente criar suas próprias variáveis</li>
+            <li>Teste diferentes <strong>combinações de operadores</strong> para entender melhor como funcionam</li>
+            <li>Crie seus próprios <strong>exercícios e desafios</strong> usando os conceitos aprendidos</li>
+            <li>Quando se sentir confortável, avance para o <strong>Módulo 3: Controle de Fluxo</strong></li>
+            <li>Pratique <strong>diariamente</strong> - mesmo que por poucos minutos</li>
+          </ol>
+        </div>
+        
+        <div class="dica-importante">
+          <h4>🎓 Dica de Estudo:</h4>
+          <p>A programação é uma habilidade prática! Não tenha medo de experimentar e cometer erros no console interativo. Cada erro é uma oportunidade de aprendizado. Continue praticando e logo estes conceitos se tornarão naturais para você.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

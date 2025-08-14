@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Módulo 3 - Controle de Fluxo</title>
+  <link rel="stylesheet" href="css/index1.css" />
+  <link rel="stylesheet" href="css/modulo3.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="js/modulo3.js" defer></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      if (!localStorage.getItem('usuarioLogado')) {
+        window.location.href = 'index1.html';
+      }
+    });
+  </script>
+</head>
+<body>
+  <div id="telaHome">
+    <header class="cabecalho">
+      <div class="cabecalho-overlay"></div>
+      <nav>
+        <ul>
+          <li><a href="index1.html">Home</a></li>
+          <!-- <li><a href="#">Sobre o Projeto</a></li> -->
+        </ul>
+        <button id="botaoLogout" onclick="logout()">Sair</button>
+      </nav>
+      <div class="conteudo">
+        <h1>Módulo 3 - Controle de Fluxo</h1>
+        <p>Domine as estruturas que controlam o fluxo do seu programa!</p>
+        <p>Aprenda condicionais, loops e como tomar decisões no código</p>
+      </div>
+    </header>
+
+    <section class="modulo-conteudo">
+      <h2>🔀 Controle de Fluxo em Python</h2>
+      <p>O controle de fluxo é o que permite que seus programas tomem decisões e executem ações repetitivas. É como dar inteligência ao seu código, permitindo que ele reaja a diferentes situações e processe grandes quantidades de dados automaticamente.</p>
+      
+      <div class="topico-imagem">
+        <img src="img/photo-1526379095098-d400fd0bf935.avif" alt="Fluxograma de decisões" class="imagem-topico">
+      </div>
+      
+      <div class="console-section">
+        <h3>🖥️ Console Python Interativo</h3>
+        <p style="color: #FFD43B; font-weight: 600;">Teste estruturas condicionais e loops diretamente! Este console suporta if/elif/else, for, while e muito mais.</p>
+        <div class="python-console">
+          <div class="console-header">
+            <span class="console-title">Python Console</span>
+            <button onclick="limparConsole()" class="btn-limpar">Limpar</button>
+          </div>
+          <div class="console-output" id="consoleOutput">
+            <div class="console-line">Python 3.9.0 - Console Interativo</div>
+            <div class="console-line">Digite seus comandos Python abaixo:</div>
+          </div>
+          <div class="console-input-container">
+            <span class="console-prompt">>>> </span>
+            <input type="text" id="consoleInput" class="console-input" placeholder="Digite seu código Python aqui..." onkeypress="executarComando(event)">
+          </div>
+        </div>
+      </div>
+
+      <h3>🤔 Estruturas Condicionais</h3>
+      <p>As estruturas condicionais permitem que seu programa tome decisões baseadas em condições. É como ensinar seu código a pensar: "Se isso for verdade, faça aquilo; senão, faça outra coisa".</p>
+      
+      <div class="conceito-card">
+        <h4>🎯 Estrutura IF básica:</h4>
+        <p>A estrutura mais simples para tomar decisões. Se a condição for verdadeira, executa o código indentado.</p>
+        <div class="codigo-exemplo">
+          <pre><code>idade = 18
+
+if idade >= 18:
+    print("Você é maior de idade!")
+    print("Pode votar e dirigir")
+
+print("Programa continua...")</code></pre>
+        </div>
+        <button onclick="executarExemplo(1)" class="btn-executar">▶️ Executar no Console</button>
+      </div>
+
+      <div class="conceito-card">
+        <h4>⚖️ Estrutura IF-ELSE:</h4>
+        <p>Quando você precisa de duas opções: uma para quando a condição é verdadeira e outra para quando é falsa.</p>
+        <div class="codigo-exemplo">
+          <pre><code>nota = 7.5
+
+if nota >= 7.0:
+    print("Aprovado! Parabéns!")
+    situacao = "Aprovado"
+else:
+    print("Reprovado. Estude mais!")
+    situacao = "Reprovado"
+
+print(f"Situação final: {situacao}")</code></pre>
+        </div>
+        <button onclick="executarExemplo(2)" class="btn-executar">▶️ Executar no Console</button>
+      </div>
+
+      <div class="conceito-card">
+        <h4>🎭 Estrutura IF-ELIF-ELSE:</h4>
+        <p>Para múltiplas condições. Muito útil quando você tem várias possibilidades diferentes.</p>
+        <div class="codigo-exemplo">
+          <pre><code>nota = 8.5
+
+if nota >= 9.0:
+    print("Excelente! Nota A")
+    conceito = "A"
+elif nota >= 8.0:
+    print("Muito bom! Nota B")
+    conceito = "B"
+elif nota >= 7.0:
+    print("Bom! Nota C")
+    conceito = "C"
+elif nota >= 6.0:
+    print("Regular. Nota D")
+    conceito = "D"
+else:
+    print("Insuficiente. Nota F")
+    conceito = "F"
+
+print(f"Conceito final: {conceito}")</code></pre>
+        </div>
+        <button onclick="executarExemplo(3)" class="btn-executar">▶️ Executar no Console</button>
+      </div>
+
+      <h3>🔄 Estruturas de Repetição (Loops)</h3>
+      <p>Os loops permitem executar o mesmo código várias vezes, automatizando tarefas repetitivas. São fundamentais para processar listas, fazer cálculos em massa e criar programas eficientes.</p>
+
+      <div class="loops-grid">
+        <div class="loop-card">
+          <div class="loop-header">
+            <i class="fas fa-repeat"></i>
+            <h4>Loop FOR</h4>
+          </div>
+          <p><strong>Para repetições com quantidade conhecida.</strong> Ideal para percorrer listas, fazer contagens ou repetir algo um número específico de vezes.</p>
+          <div class="codigo-exemplo">
+            <pre><code># Contagem simples
+for i in range(5):
+    print(f"Contando: {i}")
+
+# Percorrendo uma lista
+frutas = ["maçã", "banana", "laranja"]
+for fruta in frutas:
+    print(f"Eu gosto de {fruta}")</code></pre>
+          </div>
+          <button onclick="executarExemplo(4)" class="btn-executar">▶️ Testar</button>
+        </div>
+
+        <div class="loop-card">
+          <div class="loop-header">
+            <i class="fas fa-sync"></i>
+            <h4>Loop WHILE</h4>
+          </div>
+          <p><strong>Para repetições com condição.</strong> Continua executando enquanto uma condição for verdadeira. Cuidado com loops infinitos!</p>
+          <div class="codigo-exemplo">
+            <pre><code># Contador com while
+contador = 0
+while contador < 5:
+    print(f"Contador: {contador}")
+    contador += 1
+
+print("Loop terminou!")</code></pre>
+          </div>
+          <button onclick="executarExemplo(5)" class="btn-executar">▶️ Testar</button>
+        </div>
+      </div>
+
+      <h3>🛑 Controle de Loops: BREAK e CONTINUE</h3>
+      <p>Às vezes você precisa de mais controle sobre seus loops. O <code>break</code> para o loop completamente, enquanto o <code>continue</code> pula para a próxima iteração.</p>
+
+      <div class="controle-grid">
+        <div class="controle-card">
+          <h4>🛑 BREAK - Parar o Loop</h4>
+          <p>Interrompe o loop completamente quando uma condição é atendida.</p>
+          <div class="codigo-exemplo">
+            <pre><code># Procurar um número específico
+for numero in range(1, 11):
+    print(f"Verificando: {numero}")
+    if numero == 7:
+        print("Encontrei o 7! Parando...")
+        break
+    print(f"Não é o 7, continuando...")
+
+print("Loop terminou")</code></pre>
+          </div>
+          <button onclick="executarExemplo(6)" class="btn-executar">▶️ Executar</button>
+        </div>
+
+        <div class="controle-card">
+          <h4>⏭️ CONTINUE - Pular Iteração</h4>
+          <p>Pula o resto do código na iteração atual e vai para a próxima.</p>
+          <div class="codigo-exemplo">
+            <pre><code># Imprimir apenas números pares
+for numero in range(1, 11):
+    if numero % 2 != 0:  # Se for ímpar
+        continue  # Pula para o próximo
+    print(f"Número par: {numero}")
+
+print("Terminou!")</code></pre>
+          </div>
+          <button onclick="executarExemplo(7)" class="btn-executar">▶️ Executar</button>
+        </div>
+      </div>
+
+      <div class="exercicios-section">
+        <h3>💪 Exercícios Práticos</h3>
+        <p>Pratique o controle de fluxo com exercícios progressivos que simulam situações reais de programação.</p>
+
+        <div class="exercicio">
+          <div class="exercicio-header">
+            <h4>📝 Exercício 1: Sistema de Classificação</h4>
+            <span class="dificuldade facil">Fácil</span>
+          </div>
+          <div class="exercicio-conteudo">
+            <p><strong>Objetivo:</strong> Criar um sistema que classifica a temperatura e sugere ações.</p>
+            <div class="exercicio-requisitos">
+              <h5>Requisitos:</h5>
+              <ul>
+                <li>Crie uma variável <code>temperatura = 25</code></li>
+                <li>Se >= 30: "Muito quente! Use protetor solar"</li>
+                <li>Se >= 20: "Temperatura agradável"</li>
+                <li>Se >= 10: "Um pouco frio, leve um casaco"</li>
+                <li>Senão: "Muito frio! Vista-se bem"</li>
+              </ul>
+            </div>
+            <button onclick="mostrarSolucao(1)" class="btn-solucao">Ver Solução</button>
+            <div id="solucao1" class="solucao" style="display:none;">
+              <div class="codigo-exemplo">
+                <pre><code>temperatura = 25
+
+if temperatura >= 30:
+    print("Muito quente! Use protetor solar")
+elif temperatura >= 20:
+    print("Temperatura agradável")
+elif temperatura >= 10:
+    print("Um pouco frio, leve um casaco")
+else:
+    print("Muito frio! Vista-se bem")</code></pre>
+              </div>
+              <button onclick="executarExemplo(8)" class="btn-executar">▶️ Executar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="exercicio">
+          <div class="exercicio-header">
+            <h4>📝 Exercício 2: Contador Inteligente</h4>
+            <span class="dificuldade medio">Médio</span>
+          </div>
+          <div class="exercicio-conteudo">
+            <p><strong>Objetivo:</strong> Criar um contador que pula números específicos e para em uma condição.</p>
+            <div class="exercicio-requisitos">
+              <h5>Requisitos:</h5>
+              <ul>
+                <li>Conte de 1 a 20</li>
+                <li>Pule números divisíveis por 3 (use continue)</li>
+                <li>Pare se encontrar o número 17 (use break)</li>
+                <li>Imprima apenas os números válidos</li>
+              </ul>
+            </div>
+            <button onclick="mostrarSolucao(2)" class="btn-solucao">Ver Solução</button>
+            <div id="solucao2" class="solucao" style="display:none;">
+              <div class="codigo-exemplo">
+                <pre><code>for numero in range(1, 21):
+    if numero == 17:
+        print("Encontrei 17! Parando...")
+        break
+    if numero % 3 == 0:
+        continue
+    print(f"Número válido: {numero}")</code></pre>
+              </div>
+              <button onclick="executarExemplo(9)" class="btn-executar">▶️ Executar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="exercicio">
+          <div class="exercicio-header">
+            <h4>📝 Exercício 3: Validador de Senha</h4>
+            <span class="dificuldade dificil">Difícil</span>
+          </div>
+          <div class="exercicio-conteudo">
+            <p><strong>Objetivo:</strong> Criar um sistema que valida senhas com múltiplos critérios.</p>
+            <div class="exercicio-requisitos">
+              <h5>Requisitos:</h5>
+              <ul>
+                <li>Senha: <code>"Python123!"</code></li>
+                <li>Verificar: tamanho >= 8, tem número, tem maiúscula, tem símbolo</li>
+                <li>Contar quantos critérios foram atendidos</li>
+                <li>Classificar: Fraca (0-1), Média (2-3), Forte (4)</li>
+              </ul>
+            </div>
+            <button onclick="mostrarSolucao(3)" class="btn-solucao">Ver Solução</button>
+            <div id="solucao3" class="solucao" style="display:none;">
+              <div class="codigo-exemplo">
+                <pre><code>senha = "Python123!"
+criterios = 0
+
+if len(senha) >= 8:
+    criterios += 1
+    print("✓ Tamanho adequado")
+
+tem_numero = False
+for char in senha:
+    if char.isdigit():
+        tem_numero = True
+        break
+if tem_numero:
+    criterios += 1
+    print("✓ Contém número")
+
+tem_maiuscula = False
+for char in senha:
+    if char.isupper():
+        tem_maiuscula = True
+        break
+if tem_maiuscula:
+    criterios += 1
+    print("✓ Contém maiúscula")
+
+simbolos = "!@#$%^&*"
+tem_simbolo = False
+for char in senha:
+    if char in simbolos:
+        tem_simbolo = True
+        break
+if tem_simbolo:
+    criterios += 1
+    print("✓ Contém símbolo")
+
+print(f"Critérios atendidos: {criterios}/4")
+
+if criterios <= 1:
+    print("Senha FRACA")
+elif criterios <= 3:
+    print("Senha MÉDIA")
+else:
+    print("Senha FORTE")</code></pre>
+              </div>
+              <button onclick="executarExemplo(10)" class="btn-executar">▶️ Executar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="conclusao">
+        <h3>🎯 Resumo do Módulo</h3>
+        <p>Excelente! Você dominou o controle de fluxo em Python! Agora seu código pode tomar decisões inteligentes e executar tarefas repetitivas automaticamente.</p>
+        <img src="img/photo-1509966756634-9c23dd6e6815.avif" alt="Fluxo de código" class="imagem-topico">
+        
+        <div class="resumo-topicos">
+          <h4>📚 O que você dominou:</h4>
+          <div class="topicos-grid">
+            <div class="topico-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Estruturas condicionais (if, elif, else)</span>
+            </div>
+            <div class="topico-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Loops for e while</span>
+            </div>
+            <div class="topico-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Controle de loops (break, continue)</span>
+            </div>
+            <div class="topico-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Lógica de programação avançada</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="proximos-passos">
+          <h4>🚀 Próximos Passos:</h4>
+          <ol>
+            <li>Pratique criando <strong>sistemas de decisão</strong> mais complexos</li>
+            <li>Experimente <strong>loops aninhados</strong> (loops dentro de loops)</li>
+            <li>Combine <strong>condicionais com loops</strong> para criar algoritmos poderosos</li>
+            <li>Avance para o <strong>Módulo 4: Funções</strong> para organizar melhor seu código</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

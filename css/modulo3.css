@@ -1,0 +1,505 @@
+/* Estilos específicos para o módulo 3 */
+
+#telaHome {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Navegação */
+nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  z-index: 10;
+}
+
+.conteudo {
+  text-align: center;
+  padding: 20px 20px;
+}
+
+.conteudo h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  color: #FFD43B;
+}
+
+.conteudo p {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: #FFD43B;
+}
+
+/* Console ajustado */
+.python-console.centered {
+  position: fixed;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 800px;
+  z-index: 1000;
+  margin-top: 0;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+/* Botão de logout */
+#botaoLogout {
+  background-color: #FFD43B;
+  color: #306998;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#botaoLogout:hover {
+  background-color: #f0c530;
+}
+
+/* Conteúdo do módulo */
+.modulo-conteudo {
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.modulo-conteudo h2 {
+  color: #306998;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.modulo-conteudo h3 {
+  color: #306998;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #FFD43B;
+  padding-bottom: 0.5rem;
+  font-size: 1.4rem;
+}
+
+.modulo-conteudo p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* Imagens */
+.imagem-topico {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 8px;
+  margin: 20px auto;
+  display: block;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.topico-imagem {
+  text-align: center;
+  margin: 30px 0;
+}
+
+/* Console Python */
+.console-section {
+  background: linear-gradient(135deg, #1e1e1e, #2d2d2d);
+  padding: 30px;
+  border-radius: 12px;
+  margin: 30px 0;
+  color: white;
+}
+
+.python-console {
+  background: #1e1e1e;
+  border-radius: 8px;
+  border: 2px solid #306998;
+  overflow: hidden;
+  font-family: 'Courier New', monospace;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+.console-header {
+  background: #306998;
+  color: white;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.console-title {
+  font-weight: bold;
+}
+
+.btn-limpar {
+  background: #FFD43B;
+  color: #306998;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.console-output {
+  background: #1e1e1e;
+  color: #00ff00;
+  padding: 15px;
+  min-height: 200px;
+  max-height: 300px;
+  overflow-y: auto;
+  font-size: 14px;
+}
+
+.console-line {
+  margin-bottom: 5px;
+}
+
+.console-result {
+  color: #FFD43B;
+  margin-bottom: 5px;
+}
+
+.console-error {
+  color: #ff6b6b;
+  margin-bottom: 5px;
+}
+
+.console-input-container {
+  background: #1e1e1e;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+}
+
+.console-prompt {
+  color: #00ff00;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.console-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: white;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  outline: none;
+}
+
+/* Cards de conceito */
+.conceito-card {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-left: 4px solid #306998;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+}
+
+.conceito-card h4 {
+  color: #306998;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+/* Grid de loops */
+.loops-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.loop-card {
+  background: linear-gradient(135deg, #4B8BBE, #306998);
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.loop-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.loop-header i {
+  font-size: 1.5rem;
+  color: #FFD43B;
+}
+
+.loop-header h4 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+/* Grid de controle */
+.controle-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.controle-card {
+  background: linear-gradient(135deg, #FFD43B, #f0c530);
+  color: #306998;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.controle-card h4 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Código exemplo */
+.codigo-exemplo {
+  background: #2d2d2d;
+  color: #f8f8f2;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 15px 0;
+  overflow-x: auto;
+}
+
+.codigo-exemplo pre {
+  margin: 0;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.codigo-exemplo code {
+  color: #f8f8f2;
+}
+
+/* Botão executar */
+.btn-executar {
+  background: linear-gradient(45deg, #306998, #4B8BBE);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+.btn-executar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(48, 105, 152, 0.3);
+}
+
+/* Exercícios */
+.exercicios-section {
+  margin-top: 40px;
+}
+
+.exercicio {
+  background: #ffffff;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  margin: 20px 0;
+  overflow: hidden;
+}
+
+.exercicio-header {
+  background: linear-gradient(135deg, #306998, #4B8BBE);
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.exercicio-header h4 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.dificuldade {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.dificuldade.facil {
+  background: #28a745;
+  color: white;
+}
+
+.dificuldade.medio {
+  background: #ffc107;
+  color: #333;
+}
+
+.dificuldade.dificil {
+  background: #dc3545;
+  color: white;
+}
+
+.exercicio-conteudo {
+  padding: 20px;
+}
+
+.exercicio-requisitos {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 15px 0;
+}
+
+.exercicio-requisitos h5 {
+  color: #306998;
+  margin-bottom: 10px;
+}
+
+.exercicio-requisitos ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.exercicio-requisitos li {
+  margin-bottom: 5px;
+}
+
+.btn-solucao {
+  background: #FFD43B;
+  color: #306998;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.btn-solucao:hover {
+  background: #f0c530;
+}
+
+.solucao {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+  border-left: 4px solid #28a745;
+}
+
+.solucao h5 {
+  color: #28a745;
+  margin-bottom: 10px;
+}
+
+/* Conclusão */
+.conclusao {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  padding: 30px;
+  border-radius: 12px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.conclusao h3 {
+  color: #306998;
+  margin-bottom: 20px;
+  border: none;
+  font-size: 1.6rem;
+}
+
+.resumo-topicos {
+  margin: 30px 0;
+}
+
+.resumo-topicos h4 {
+  color: #306998;
+  margin-bottom: 20px;
+}
+
+.topicos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.topico-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.topico-item i {
+  color: #28a745;
+  font-size: 1.2rem;
+}
+
+.proximos-passos {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+  text-align: left;
+}
+
+.proximos-passos h4 {
+  color: #306998;
+  margin-bottom: 15px;
+}
+
+.proximos-passos ol {
+  padding-left: 20px;
+}
+
+.proximos-passos li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .loops-grid,
+  .controle-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .modulo-conteudo {
+    padding: 20px;
+  }
+  
+  .console-section {
+    padding: 20px;
+  }
+  
+  .python-console.centered {
+    width: 95%;
+  }
+}
